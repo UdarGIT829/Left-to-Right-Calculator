@@ -6,7 +6,7 @@
 
 #include "IntegerOperators.hpp"
 
-// #include "DecimalOperators.hpp"
+#include "DecimalOperators.hpp"
 
 bool checkForInt (auto arg){
   std::string thisType = typeid(arg).name();
@@ -44,38 +44,51 @@ int main() {
   //=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
     //Initialize Calculators
   IntegerCalculator myIntCalc;
-  // DecimalCalculator myDecCalc;
+  DecimalCalculator myDecCalc;
   Calculator* myCalculator;
     //Declare integer and decimal inputs
-  int myIntInput1 = 5;
-  int myIntInput2 = 13;
+  std::string myIntInput1 = "5";
+  std::string myIntInput2 = "13";
 
-  double myDecInput1 = 5.00001;
-  double myDecInput2 = 29.999998;
+  std::string myDecInput1 = "5.00001";
+  std::string myDecInput2 = "29.999998";
 
   myCalculator = &myIntCalc;
-  int myIntResult = myCalculator->sum(myIntInput1, myIntInput2);
-  // myCalculator = &myDecCalc;
-  // double myDecResult = myCalculator->sum(myDecInput1, myDecInput2);
+  myCalculator->sum(myIntInput1, myIntInput2);
+  std::string myIntResult = myCalculator->result;
 
-  std::cout << "The int sum is: " << std::to_string(myIntResult) << std::endl;
-  // std::cout << "The double sum is: " << std::to_string(myDecResult) << std::endl;
+  myCalculator = &myDecCalc;
+  myCalculator->sum(myDecInput1, myDecInput2);
+  std::string myDecResult = myCalculator->result;
 
-  // myCalculator = &myIntCalc;
-  // myIntResult = myCalculator->difference(myIntInput1, myIntInput2);
-  // myCalculator = &myDecCalc;
-  // myDecResult = myCalculator->difference(myDecInput1, myDecInput2);
+  std::cout << "The int sum is: " << myIntResult << std::endl;
+  std::cout << "The double sum is: " << myDecResult << std::endl;
 
-  // std::cout << "The int difference is: " << std::to_string(myIntResult) << std::endl;
-  // std::cout << "The double difference is: " << std::to_string(myDecResult) << std::endl;
+  std::cout << std::endl;
 
-  // myCalculator = &myIntCalc;
-  // myIntResult = myCalculator->product(myIntInput1, myIntInput2);
-  // myCalculator = &myDecCalc;
-  // myDecResult = myCalculator->product(myDecInput1, myDecInput2);
+  myCalculator = &myIntCalc;
+  myCalculator->difference(myIntInput1, myIntInput2);
+  myIntResult = myCalculator->result;
 
-  // std::cout << "The int product is: " << std::to_string(myIntResult) << std::endl;
-  // std::cout << "The double product is: " << std::to_string(myDecResult) << std::endl;
+  myCalculator = &myDecCalc;
+  myCalculator->difference(myDecInput1, myDecInput2);
+  myDecResult = myCalculator->result;
+
+  std::cout << "The int difference is: " << myIntResult << std::endl;
+  std::cout << "The double difference is: " << myDecResult << std::endl;
+
+  std::cout << std::endl;
+
+  myCalculator = &myIntCalc;
+  myCalculator->product(myIntInput1, myIntInput2);
+  myIntResult = myCalculator->result;
+
+  myCalculator = &myDecCalc;
+  myCalculator->product(myDecInput1, myDecInput2);
+  myDecResult = myCalculator->result;
+
+  std::cout << "The int product is: " << myIntResult << std::endl;
+  std::cout << "The double product is: " << myDecResult << std::endl;
   //=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
   return 0;
 }
