@@ -6,7 +6,7 @@
 
 #include "IntegerOperators.hpp"
 
-#include "DecimalOperators.hpp"
+// #include "DecimalOperators.hpp"
 
 bool checkForInt (auto arg){
   std::string thisType = typeid(arg).name();
@@ -42,38 +42,40 @@ bool checkForDouble (auto arg){
 int main() {
   // TESTING SUM FUNCTIONS
   //=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-  //   //Initialize Calculators
-  // IntegerCalculator myIntCalc = IntegerCalculator();
-  // DecimalCalculator myDecCalc = DecimalCalculator();
-  //   //Declare integer and decimal inputs
-  // int myIntInput1 = 5;
-  // int myIntInput2 = 13;
+    //Initialize Calculators
+  IntegerCalculator myIntCalc;
+  // DecimalCalculator myDecCalc;
+  Calculator* myCalculator;
+    //Declare integer and decimal inputs
+  int myIntInput1 = 5;
+  int myIntInput2 = 13;
 
-  // double myDecInput1 = 5.00001;
-  // double myDecInput2 = 29.999998;
+  double myDecInput1 = 5.00001;
+  double myDecInput2 = 29.999998;
 
-  // int myIntResult = myIntCalc.sumOfInts(myIntInput1, myIntInput2);
-  // double myDecResult = myDecCalc.sumOfDecimals(myDecInput1, myDecInput2);
+  myCalculator = &myIntCalc;
+  int myIntResult = myCalculator->sum(myIntInput1, myIntInput2);
+  // myCalculator = &myDecCalc;
+  // double myDecResult = myCalculator->sum(myDecInput1, myDecInput2);
 
-  // std::cout << "The int sum is: " << std::to_string(myIntResult) << std::endl;
+  std::cout << "The int sum is: " << std::to_string(myIntResult) << std::endl;
   // std::cout << "The double sum is: " << std::to_string(myDecResult) << std::endl;
 
-  // myIntResult = myIntCalc.differenceOfInts(myIntInput1, myIntInput2);
-  // myDecResult = myDecCalc.differenceOfDecimals(myDecInput1, myDecInput2);
+  // myCalculator = &myIntCalc;
+  // myIntResult = myCalculator->difference(myIntInput1, myIntInput2);
+  // myCalculator = &myDecCalc;
+  // myDecResult = myCalculator->difference(myDecInput1, myDecInput2);
 
   // std::cout << "The int difference is: " << std::to_string(myIntResult) << std::endl;
   // std::cout << "The double difference is: " << std::to_string(myDecResult) << std::endl;
 
-  // myIntResult = myIntCalc.productOfInts(myIntInput1, myIntInput2);
-  // myDecResult = myDecCalc.productOfDecimals(myDecInput1, myDecInput2);
+  // myCalculator = &myIntCalc;
+  // myIntResult = myCalculator->product(myIntInput1, myIntInput2);
+  // myCalculator = &myDecCalc;
+  // myDecResult = myCalculator->product(myDecInput1, myDecInput2);
 
   // std::cout << "The int product is: " << std::to_string(myIntResult) << std::endl;
   // std::cout << "The double product is: " << std::to_string(myDecResult) << std::endl;
-  //=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
-  // TESTING TYPE CHECKING
-  // int myIntInput1 = 5;
-  // double myDecInput1 = 5.00001;
-  // std::cout << checkForDouble(myDecInput1) << std::endl;
   //=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*
   return 0;
 }
