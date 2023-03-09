@@ -7,15 +7,23 @@
 class IntegerCalculator: public Calculator{
 
     public:
-        int sum(int arg1, int arg2){
-            int thisSum = arg1 + arg2;
-            return thisSum;
+        void sum(std::string arg1, std::string arg2){
+            
+            int thisSum = std::stoi(arg1) + std::stoi(arg2);
+            this->result = std::to_string(thisSum);
         }
 
-        // int difference(int arg1, int arg2){
-        //     int thisDifference = arg1 - arg2;
-        //     return thisDifference;
-        // }
+        void difference(std::string arg1, std::string arg2){
+            
+            int thisDifference = std::stoi(arg1) - std::stoi(arg2);
+            this->result = std::to_string(thisDifference);
+        }
+
+        void product(std::string arg1, std::string arg2){
+            
+            int thisProduct = std::stoi(arg1) * std::stoi(arg2);
+            this->result = std::to_string(thisProduct);
+        }
 
         // int product(int arg1, int arg2){
         //     int thisProduct = arg1 * arg2;

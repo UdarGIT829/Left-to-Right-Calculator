@@ -7,16 +7,23 @@
 class DecimalCalculator : public Calculator{
 
     public:
-        double sum(double arg1, double arg2){
-            double thisSum = arg1 + arg2;
-            return thisSum;
+        void sum(std::string arg1, std::string arg2){
+            double thisSum = std::stod(arg1) + std::stod(arg2);
+            this->result = std::to_string(thisSum);
             }
 
-        // double difference(double arg1, double arg2){
-        //     double thisDifference = arg1 - arg2;
-        //     return thisDifference;
-        //     }
+        void difference(std::string arg1, std::string arg2){
+            
+            double thisDifference = std::stod(arg1) - std::stod(arg2);
+            this->result = std::to_string(thisDifference);
+        }
         
+        void product(std::string arg1, std::string arg2){
+            
+            double thisProduct = std::stod(arg1) * std::stod(arg2);
+            this->result = std::to_string(thisProduct);
+        }
+
         // double product(double arg1, double arg2){
         //     double thisProduct = arg1 * arg2;
         //     return thisProduct;
