@@ -1,6 +1,6 @@
 //Header for abstract class for calculators
-#ifndef ABSTRACTCALCULATOR_H
-#define ABSTRACTCALCULATOR_H
+#ifndef ABSTRACTCALCULATOR_HPP
+#define ABSTRACTCALCULATOR_HPP
 #include <string>
 class Calculator{
     public:
