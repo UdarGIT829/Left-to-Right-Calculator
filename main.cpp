@@ -8,35 +8,7 @@
 
 #include "DecimalOperators.hpp"
 
-bool checkForInt (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "i"){
-    return true;
-  }
-  std::cout << "The type is ";
-  std::cout << typeid(arg).name() << std::endl;
-  return false;
-}
-
-bool checkForFloat (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "f"){
-    return true;
-  }
-  std::cout << "The type is ";
-  std::cout << typeid(arg).name() << std::endl;
-  return false;
-}
-
-bool checkForDouble (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "d"){
-    return true;
-  }
-  std::cout << "The type is ";
-  std::cout << typeid(arg).name() << std::endl;
-  return false;
-}
+#include "Typechecking.hpp"
 
 
 int main() {
