@@ -1,29 +1,31 @@
 //Header for typechecking
-#ifndef TYPECHECKING_H
-#define TYPECHECKING_H
+#ifndef TYPECHECKING_HPP
+#define TYPECHECKING_HPP
 
+#include <iostream>
 #include <string>
 
+bool checkForNumber (auto arg){
+    return std::isdigit(arg[0]);
+}
+
 bool checkForInt (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "i"){
-    return true;
+  if(checkForNumber(arg)){
+    return std::stoi(arg) == std::stod(arg);
   }
   return false;
 }
 
 bool checkForFloat (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "f"){
-    return true;
+  if(checkForNumber(arg)){
+    return std::stoi(arg) != std::stod(arg);
   }
   return false;
 }
 
 bool checkForDouble (auto arg){
-  std::string thisType = typeid(arg).name();
-  if(thisType == "d"){
-    return true;
+  if(checkForNumber(arg)){
+    return std::stoi(arg) != std::stod(arg);
   }
   return false;
 }
